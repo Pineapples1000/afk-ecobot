@@ -87,20 +87,20 @@ const { Client,
 
   client.on("messageCreate",(message)=>{
 
-    if(message.author.id === "1086321246905565214"){
+    if (message.author.id === "1086321246905565214") {
 
-      if(message.embeds[0]){
+      if (message.embeds[0]) {
         let embed = message.embeds[0].data;
         console.log("\n\nWe got ourselves an embed\n\n");
         console.log(embed);
 
-        if(embed.title === "Cost of Solana"){
+        if (embed.title === "Cost of Solana"){
           console.log("solana cost");
 
           let cost = parseInt(embed.description.slice(60));
-          if(cost < 164){
+          if (cost <= 165) {
             say("$buy all", AUTHTOKEN);
-          }else if(cost > 75){
+          } else if(cost >= 185) {
             say("$sell all", AUTHTOKEN);
           }
         } 
